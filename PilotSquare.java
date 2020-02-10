@@ -47,7 +47,7 @@ public class PilotSquare {
 		path.add(new Waypoint(0, 0));
 
 		navigator.followPath(path);
-		
+		//edit 
 	}
 
 }
