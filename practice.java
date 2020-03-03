@@ -1,10 +1,11 @@
-
+import lejos.hardware.sensor.EV3UltrasonicSensor;
 import java.lang.Math.*;
 import java.io.*;
-import lejos.nxt.*;
+//import lejos.nxt.*;
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.Motor;
+import lejos.hardware.port.SensorPort;
 import lejos.robotics.navigation.*;
 
 /*Lego Robot that exits mazes using the Tremaux Algorithm*/
@@ -13,7 +14,7 @@ public class practice {
 
   //All the variables and instanciations of the motors, sensors, etc...
   TachoPilot robot; // The Class that will deal with the movement of the robot
-  UltrasonicSensor  sensor = new UltrasonicSensor (SensorPort.S1);// The sensor
+  EV3UltrasonicSensor  sensor = new EV3UltrasonicSensor (SensorPort.S1);// The sensor
   TouchSensor exitdetector = new TouchSensor(SensorPort.S4);
   // *END*
 
