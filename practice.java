@@ -6,6 +6,7 @@ import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.Motor;
 import lejos.hardware.port.SensorPort;
+import lejos.robotics.SampleProvider;
 import lejos.robotics.navigation.*;
 
 /*Lego Robot that exits mazes using the Tremaux Algorithm*/
@@ -24,10 +25,10 @@ public class practice {
   }
     catch(InterruptedException e){}
   }
-  public int getDistance(){
-      int Distance= sensor.getDistance();
+  public SampleProvider getDistance(){
+      SampleProvider Distance= sensor.getDistanceMode();
       pause(30);
-      return sensor.getDistance();
+      return sensor.getDistanceMode();
   }
   void fill_map(int maze[][], int maze_X, int maze_Y) {//fill the outer boundaries of the maze to 1
       int a=0;
@@ -135,9 +136,9 @@ public class practice {
   public int wallFinder(){ //the ultrasonic sensors gets the distance to the wall.
       int Distance;
       int wallPresence;
-      sensor.getDistance();
+      sensor.getDistanceMode();
       pause(30);
-      Distance= sensor.getDistance();
+      Distance= sensor.getDistanceMode();
       LCD.drawInt(Distance, 5, 5);
       if (Distance > 12)
       {
@@ -173,18 +174,18 @@ public class practice {
     }
   public void testParallelRight1(int refdistance){
       int Distance;
-      Distance= sensor.getDistance();
+      Distance= sensor.getDistanceMode();
       pause(30);
-      Distance = sensor.getDistance();
+      Distance = sensor.getDistanceMode();
       if( refdistance > Distance) {
         robot.rotate(-5);
       }
   }
   public void testParallelLeft1(int refdistance){
       int Distance;
-      Distance= sensor.getDistance();
+      Distance= sensor.getDistanceMode();
       pause(30);
-      Distance = sensor.getDistance();
+      Distance = sensor.getDistanceMode();
       if( refdistance > Distance) {
         robot.rotate(5);
       }
